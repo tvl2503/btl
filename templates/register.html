@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
+
+<!-- ============================ COMPONENT REGISTER   ================================= -->
+	<div class="card mx-auto" style="max-width:520px; margin-top:40px;">
+      <article class="card-body">
+		<header class="mb-4"><h4 class="card-title">Sign up</h4></header>
+		<form method="POST">
+			{% csrf_token %}
+			<!-- Name -->
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label">Name</label>
+				<input type="text" class="form-control" name = "name" id="name">
+			</div>
+			<!-- Email  -->
+			<div class="mb-3">
+				<label for="exampleInputEmail1" class="form-label">Email address</label>
+				<input type="email" name = "email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+			</div>
+			<!-- Phone -->
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label">Phone Number</label>
+				<input type="number" name = "phone" class="form-control" id="phone">
+			</div>
+			<!-- PASSWORD -->
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label">Password</label>
+				<input type="password" name = "password" class="form-control" id="exampleInputPassword1">
+			</div>
+			<!-- Cofirm Password -->
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label"> Confirm Password</label>
+				<input type="password" name = "confirmpassword" class="form-control" id="exampleInputPassword2">
+			</div>
+			<!-- Check me out -->
+			<!-- <div class="mb-3 form-check">
+				<input type="checkbox" class="form-check-input" id="exampleCheck1">
+				<label class="form-check-label" for="exampleCheck1">Check me out</label>
+			</div> -->
+			<!-- Button -->
+			<button type="submit" class="btn btn-primary">Sign UP</button>
+		</form>
+		</article><!-- card-body.// -->
+    </div> <!-- card .// -->
+    <p class="text-center mt-4">Have an account? <a href="{%url 'signin' %}">Log In</a></p>
+    <br><br>
+<!-- ============================ COMPONENT REGISTER  END.// ================================= -->
+
+
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+{% endblock content %}
